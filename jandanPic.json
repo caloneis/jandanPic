@@ -1,0 +1,34 @@
+{
+	"request": [
+		{
+			"enable": true,
+			"name": "重定向地址",
+			"ruleType": "redirect",
+			"matchType": "regexp",
+			"pattern": "^http(s?)://(.*)\\.moyu\\.im/(.*)",
+			"exclude": "",
+			"group": "无聊图",
+			"isFunction": false,
+			"action": "redirect",
+			"to": "http://$2.sinaimg.cn/$3"
+		}
+	],
+	"sendHeader": [
+		{
+			"enable": true,
+			"name": "修改引用",
+			"ruleType": "modifySendHeader",
+			"matchType": "regexp",
+			"pattern": "^http(s?)://(.*)\\.sinaimg\\.cn/(.*)",
+			"exclude": "",
+			"group": "无聊图",
+			"isFunction": false,
+			"action": {
+				"name": "referer",
+				"value": "https://www.sina.com.cn/"
+			}
+		}
+	],
+	"receiveHeader": [],
+	"receiveBody": []
+}
